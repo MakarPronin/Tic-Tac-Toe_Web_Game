@@ -1,13 +1,16 @@
 body {
+    background-color:#0e1227;
     margin: 0;
 }
 #main-container {
+    min-width: 1212px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: 1000px;
     background-image: url("https://kartinkin.net/uploads/posts/2021-07/1625779471_21-kartinkin-com-p-krasivie-minimalistichnie-oboi-krasivie-21.jpg");
-    background-size:cover;
+    background-size: cover;
+    box-shadow: 0px 100px 100px #080c16c0;
 }
 
 #left-container {
