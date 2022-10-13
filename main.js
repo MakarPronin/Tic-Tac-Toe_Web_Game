@@ -27,6 +27,10 @@ function init() {
 }
 
 function renderWinMsg(player) {
+    const yourTurn = document.getElementById("your-turn");
+    if (yourTurn) {
+        yourTurn.remove();
+    }
     const boardContainer = document.getElementById("board-container");
     if (boardContainer) {
         boardContainer.remove();
@@ -157,16 +161,16 @@ function cellClicked(x, y, errorContainer) {
             grid[y][x] = turn;
             turn = 2;
             --freeCells;
-            checkWinCond();
             renderYourTurn(document.getElementById("right-container"));
+            checkWinCond();
         }
         else {
             cell.innerText = 'O';
             grid[y][x] = turn;
             turn = 1;
             --freeCells;
-            checkWinCond();
             renderYourTurn(document.getElementById("left-container"));
+            checkWinCond();
         }
     }
     else{
