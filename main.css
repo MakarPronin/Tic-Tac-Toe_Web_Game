@@ -57,7 +57,7 @@ body {
 }
 
 #error-msg {
-    color: rgb(255, 92, 154);
+    color: rgb(255, 165, 184);
     text-shadow: 1px 2px 4px #000000d1;
 }
 .text {
