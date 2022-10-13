@@ -60,38 +60,38 @@ function renderWinMsg(player) {
 
 function checkWinCond() {
     let curSeqLen = 0;
-    let curPl = 1;
+    let curPl = 0;
     //check vertical
     for(let x = 0; x < COL_NUM; ++x) {
         for(let y = 0; y < ROW_NUM; ++y) {
-            ++curSeqLen;
             if (grid[y][x] != curPl) {
                 curSeqLen = 0;
                 curPl = grid[y][x];
             }
+            ++curSeqLen;
             if(curSeqLen >= NUM_TO_WIN && curPl !== 0) {
                 renderWinMsg(curPl);
                 return;
             }
         }
         curSeqLen = 0;
-        curPl = 1;
+        curPl = 0;
     }
     //check horizontal
     for(let y = 0; y < ROW_NUM; ++y) {
         for(let x = 0; x < COL_NUM; ++x) {
-            ++curSeqLen;
             if (grid[y][x] != curPl) {
                 curSeqLen = 0;
                 curPl = grid[y][x];
             }
+            ++curSeqLen;
             if(curSeqLen >= NUM_TO_WIN && curPl !== 0) {
                 renderWinMsg(curPl);
                 return;
             }
         }
         curSeqLen = 0;
-        curPl = 1;
+        curPl = 0;
     }
 
     let diags1 = [];
@@ -109,38 +109,34 @@ function checkWinCond() {
     
     for(let i = 0; i < diags1.length; ++i) {
         for(let j = 0; j < diags1[i].length; ++j) {
-            ++curSeqLen;
             if (diags1[i][j] != curPl) {
                 curSeqLen = 0;
                 curPl = diags1[i][j];
             }
+            ++curSeqLen;
             if(curSeqLen >= NUM_TO_WIN && curPl !== 0) {
                 renderWinMsg(curPl);
                 return;
             }
-            if (diags2.length <= j) {
-                diags2.push([]);
-            }
-            diags2[j].push(diags1[i][j]);
         }
         curSeqLen = 0;
-        curPl = 1;
+        curPl = 0;
     }
 
     for(let i = 0; i < diags2.length; ++i) {
         for(let j = 0; j < diags2[i].length; ++j) {
-            ++curSeqLen;
             if (diags2[i][j] != curPl) {
                 curSeqLen = 0;
                 curPl = diags2[i][j];
             }
+            ++curSeqLen;
             if(curSeqLen >= NUM_TO_WIN && curPl !== 0) {
                 renderWinMsg(curPl);
                 return;
             }
         }
         curSeqLen = 0;
-        curPl = 1;
+        curPl = 0;
     }
 
     if (freeCells == 0) {
