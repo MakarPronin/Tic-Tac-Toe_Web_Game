@@ -1,4 +1,5 @@
 # Tic-Tac-Toe_Web_Game
+Simple Tic-Tac-Toe game I developed for a showcase on a CICSoft (Student Organization at Umass Amherst) teaching session.
 # Render Link (Cloud Application Hosting): https://tic-tac-toe-web-game.onrender.com
 
 # Screenshots:
